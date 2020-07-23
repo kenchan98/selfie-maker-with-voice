@@ -1,0 +1,270 @@
+html{
+    margin:0;
+    background: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    margin:0;
+    overflow: hidden;
+}
+
+#logo{
+    position:absolute;
+    top:0;
+    height:70px;
+}
+
+
+/* --------------------
+/* DISCLAIMER
+/* --------------------*/
+#disclaimer{
+    position:absolute;
+    top:0;
+    margin: 0;
+    padding: 0;
+    background: black;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+}
+#disclaimer > div:first-of-type{
+    width:50%;
+    height:100px;
+    text-align: center;
+}
+
+
+/* --------------------
+/* INTRO
+/* --------------------*/
+#intro{
+    position:absolute;
+    top:0;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-family: 'Raleway';
+    font-size: 1.5rem;
+    line-height: 1.5em;
+}
+#intro div{
+    width:640px;
+}
+.centre{
+    text-align: center;
+}
+button{
+    margin-top:2rem;
+    padding: 1rem 2rem;
+    border-radius:10px;
+}
+
+
+/* --------------------
+/* VIDEO WRAPPER
+/* --------------------*/
+#video-wrapper{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 1px solid red;*/
+    box-sizing: border-box;
+    color: white;
+}
+#video-content{
+    width: 640px;
+}
+#video-content div{
+    width: 640px;
+    border-radius: 4px; 
+    overflow: hidden; 
+}
+video{
+    margin:0;
+    position: absolute;
+    /*border: 1px solid blue;*/
+}
+
+
+canvas{
+    margin:0;
+    position: relative;
+}
+
+#my-draw-canvas{
+    visibility: hidden;
+}
+
+
+img{
+    margin:1rem;
+}
+
+/* --------------------
+/* TRANSCRIPT CONTAINER
+/* --------------------*/
+.transcript-container{
+    position: absolute;
+    margin:1rem 0;
+    font-family: 'Raleway';
+    font-size: 1.5rem;
+    opacity: 0;
+}
+.pulsat-anim{
+    animation: opacityPulse 3s ease-out;
+    animation-iteration-count: infinite; 
+    opacity: 1;
+    margin:  0 0 1rem 0;
+    font-weight: 900;
+}
+@keyframes opacityPulse {
+    0% {opacity: 0.3;}
+    50% {opacity: 1.0;}
+    100% {opacity: 0.3;}
+}
+
+
+/* --------------------
+/* IMAGE GALLERY 
+/* --------------------*/
+#image-gallery{
+    position: absolute;
+    width: 100vw;
+    height: 230px;
+    bottom: -230px;
+}
+#image-gallery header{
+    color: white;
+    background: rgb(90,90,90);
+    margin: 0 1rem ;
+    padding: 1rem 2rem;
+    display: inline-block;
+    font-family: 'Raleway';
+    font-size: 1.5rem;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+}
+#image-gallery header:hover{
+    background: rgb(120,120,120);
+    cursor: pointer;
+}
+#image-gallery-content{
+    /*display: flex;
+    justify-content: start;
+    align-items: center;*/
+    padding:0 1rem;
+    background: rgb(90,90,90);
+    width:100%;
+    height:170px;
+    border: 3px blue;
+}
+#image-gallery-content img{
+    width:130px;
+    height:130px;
+    border-radius:8px;
+}
+#place-holder{
+    color: rgb(200,200,200);
+    font-size: 1.3rem;
+    font-family: 'Raleway';
+    text-align: center;
+    padding-top: 3rem;
+}
+
+/* --------------------
+/* IMAGE SEQUENCE
+/* --------------------*/
+#image-sequence-container{
+    position: absolute;
+    top:0;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 1px solid red;*/
+    box-sizing: border-box;
+    color: white;
+    visibility: hidden;
+}
+#image-sequence-content{
+    width: 640px;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(207, 100, 0);
+    font-size: 1.5rem;
+    border-radius: 20px;
+}
+#image-place-holder{
+    border-radius:10px;
+}
+
+/* --------------------
+/* VOICE COMMAND 
+/* --------------------*/
+#voice-command{
+    position: absolute;
+    top: -530px;
+    width: 300px;
+    height: 600px;
+    right:0;
+}
+#voice-command header{
+    position: absolute;
+    display:block;
+    top: 460px;
+    color: white;
+    background: rgb(120,120,90);
+    width:300px;
+    display: inline-block;
+    font-family: 'Raleway';
+    font-size: 1.5rem;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    right:0;
+}
+#voice-command header:hover{
+    background: rgb(120,120,120);
+}
+#voice-command-content{
+    padding:1rem;
+    background: rgb(90,90,90);
+    width:100%;
+    height:460px;
+    border: 3px blue;
+    color: white;
+    font-size: 1.2rem;;
+    font-family: 'Raleway';
+}
+#voice-command-content li{
+    padding: .3rem;
+}
+#voice-command-content li:hover{
+    background: rgb(180, 218, 197);
+    color:black;
+    cursor: pointer;
+}
+

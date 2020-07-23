@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="An application that allows you to take selfies with your voice.">
+        <meta name="author" content="Ken Chan">
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <title>Selfie Maker with voice</title>
+        <link rel="stylesheet" href="css/app.css">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&family=Rubik:wght@400;500&display=swap" rel="stylesheet"><script defer src="js/libs/face-api.min.js"></script>
+        <script defer src="js/libs/createjs.min.js"></script>
+        <script defer src="js/libs/howler.min.js"></script>
+        <script defer src="js/libs/gsap.min.js"></script>
+        <script defer src="js/speech.js"></script>
+        <script defer src="js/app.js"></script>
+    </head>
+    <body>
+        <div id='video-wrapper'>
+            <div id='video-content'>
+                <video id='video' width='640' height='480' autoplay muted></video>
+                <canvas id='my-draw-canvas' width='640' height='480'></canvas>
+                <div class='transcript-container'><span class='pulsat-anim'>LISTENING : </span><span id='transcript'>Just say <i><b>"I am Ready"</b></i></span></div>
+            </div>
+        </div>
+
+        <div id='image-sequence-container'>
+            <div id='image-sequence-content'>
+                <img id='image-place-holder'>
+                <br>
+                <div>Say <i><b>"Close Image Sequence"</b></i> to discard this.</div>
+            </div>
+        </div>
+
+        <section id='image-gallery'>
+            <header onclick='checkGalleryStatus()'>Image Gallery</header>
+            <div id='image-gallery-content'>
+                <div id='place-holder' width='200px' height='200px'>Nothing in here yet. Say <i><b>"Take A Picture"</b></i> and your taken selfie will be stored in here.</div>
+            </div>
+        </section>
+
+        <nav id='voice-command'>
+            <header onclick='checkVoiceCommandStatus()'>Commands List</header>
+            <div id='voice-command-content'>
+                Commands you can say/select:
+                <ul>
+                    <li onclick='takePicture()'>Take A Picture</li>
+                    <li onclick='showHat()'>Give Me A Hat</li>
+                    <li onclick='removeHat()'>Remove The Hat</li>
+                    <li onclick='openGallery()'>Open Gallery</li>
+                    <li onclick='closeGallery()'>Close Gallery</li>
+                    <li onclick='openImageSequence()'>Play Image Sequence</li>
+                    <li onclick='closeImageSequence()'>Close Image Sequence</li>
+                    <li onclick='removeAllImages()'>Remove All Images</li>
+                    <li>Open Commands List</li>
+                    <li>Close Commands List</li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id='intro'>
+            <div>
+                <article>
+                    Selfie Maker With Voice allows you to take photos of yourself with your voice, freeing you from any clicking or tapping actions. Your selfies taken in this app can be made into a little animated sequence too and it's fun!
+                    <p>The camera in this app can also detect your facial expression whether you are happy, sad or surprised. So go on, what you are waiting for?</p>
+                    Just say <i><b>"I am Ready"</b></i> or click <button onclick='initApp()'>NEXT</button>
+                </article>
+            </div>
+        </section>
+
+        <div id='disclaimer'>
+            <div>
+                This application has only been tested in Google Chrome browser.
+                <br>
+                <button onclick='removeDisclaimerScreen()'>NEXT</button>
+            </div>
+        </div>
+
+        <img id='logo' src='img/logo.png'>
+    </body>
+</html>
